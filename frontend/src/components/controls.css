@@ -1,0 +1,53 @@
+.bottom-controls{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+
+    display:flex;
+    gap:18px;
+
+    background:#202124;
+
+    padding:14px 24px;
+
+    border-radius:50px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+    z-index:1000;
+}
+
+.bottom-controls button{
+
+    width:58px;
+    height:58px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    background:#374151;
+
+    color:white;
+
+    transition:.25s;
+}
+
+.bottom-controls button:hover{
+
+    transform:scale(1.08);
+
+    background:#4b5563;
+
+}
+
+.leave-btn{
+
+    background:#dc2626 !important;
+
+}

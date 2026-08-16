@@ -1,0 +1,232 @@
+.bottom-controls {
+  position: fixed;
+  bottom: -9.5px;
+  left: 47.6%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  background: rgba(20, 29, 48, 0.95);
+  backdrop-filter: blur(18px);
+
+  padding: 16px 28px;
+
+  border-radius: 60px;
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,255,255,.08);
+
+  z-index: 999;
+}
+
+.bottom-controls button {
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  border:none;
+  outline:none;
+
+  cursor:pointer;
+
+  font-size:17px;
+  font-weight:600;
+
+  height:56px;
+
+  padding:0 22px;
+
+  border-radius:18px;
+
+  transition:.25s ease;
+
+  background:#2d3748;
+
+  color:white;
+}
+
+.bottom-controls button:hover{
+
+  transform:translateY(-4px);
+
+  background:#3b82f6;
+
+  box-shadow:0 8px 20px rgba(59,130,246,.45);
+
+}
+
+.bottom-controls button svg{
+
+  font-size:22px;
+
+}
+
+.leave-btn{
+
+  background:#ef4444 !important;
+
+  width:60px;
+
+  padding:0 !important;
+
+  border-radius:50% !important;
+
+}
+
+.leave-btn:hover{
+
+  background:#dc2626 !important;
+
+  transform:scale(1.08);
+
+}
+
+.control-btn{
+
+  background:white !important;
+
+  color:#222 !important;
+
+  font-weight:700;
+
+}
+
+.control-btn:hover{
+
+  background:#2563eb !important;
+
+  color:white !important;
+
+}
+
+@media(max-width:768px){
+
+.bottom-controls{
+
+gap:10px;
+
+padding:12px 18px;
+
+}
+
+.bottom-controls button{
+
+font-size:14px;
+
+padding:0 14px;
+
+height:48px;
+
+}
+
+}
+
+/* ==========================================
+   MOBILE & TABLET RESPONSIVE CONTROLS
+========================================== */
+
+@media (max-width: 768px) {
+
+    .bottom-controls {
+        position: fixed;
+
+        bottom: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: calc(100vw - 20px);
+        max-width: calc(100vw - 20px);
+
+        padding: 10px;
+        gap: 8px;
+
+        border-radius: 20px;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        overflow: visible;
+    }
+
+    .bottom-controls button {
+        height: 46px;
+
+        min-width: 46px;
+
+        padding: 0 12px;
+
+        font-size: 13px;
+
+        border-radius: 14px;
+
+        gap: 6px;
+
+        flex-shrink: 0;
+    }
+
+    .bottom-controls button svg {
+        font-size: 18px;
+    }
+
+    .leave-btn {
+        width: 46px;
+        min-width: 46px;
+    }
+
+}
+
+/* ==========================================
+   SMALL MOBILE PHONES
+========================================== */
+
+@media (max-width: 480px) {
+
+    .bottom-controls {
+
+        bottom: 8px;
+
+        width: calc(100vw - 12px);
+        max-width: calc(100vw - 12px);
+
+        padding: 8px;
+
+        gap: 6px;
+
+        border-radius: 18px;
+    }
+
+    .bottom-controls button {
+
+        height: 42px;
+
+        min-width: 42px;
+
+        padding: 0 9px;
+
+        font-size: 12px;
+
+        border-radius: 12px;
+
+        gap: 5px;
+    }
+
+    .bottom-controls button svg {
+
+        font-size: 16px;
+    }
+
+    .leave-btn {
+
+        width: 42px;
+
+        min-width: 42px;
+
+    }
+
+}

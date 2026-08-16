@@ -1,0 +1,53 @@
+.whiteboard-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.whiteboard{
+    width:950px;
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+}
+
+.whiteboard-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+    background:#2563eb;
+    color:white;
+}
+
+.whiteboard-header button{
+    border:none;
+    background:none;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+canvas{
+    display:block;
+    cursor:crosshair;
+}
+
+.toolbar{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    padding:15px;
+    background:#f5f5f5;
+}
+
+.toolbar button{
+    padding:10px 16px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}

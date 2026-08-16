@@ -1,0 +1,884 @@
+/* ===========================
+   VIDEO CONTAINER AREA
+=========================== */
+
+.video-container {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+
+    overflow: hidden;
+}
+
+/* ===========================
+   VIDEO GRID
+   Vertical Scroll ONLY
+=========================== */
+
+.video-grid {
+    flex: 1;
+
+    min-height: 0;
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    grid-auto-rows: minmax(220px, 1fr);
+
+    gap: 14px;
+
+    align-items: stretch;
+
+    justify-items: stretch;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    padding: 55px 10px 70px 10px;
+
+    /* Reserve space for pagination */
+    padding-bottom: 70px;
+
+    margin-bottom: 0;
+}
+
+/* ===========================
+   VIDEO GRID SCROLLBAR
+=========================== */
+
+.video-grid::-webkit-scrollbar {
+    width: 8px;
+}
+
+.video-grid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.video-grid::-webkit-scrollbar-thumb {
+    background: #475569;
+
+    border-radius: 10px;
+}
+
+.video-grid::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* ===========================
+   VIDEO CARD
+=========================== */
+
+.video-card {
+
+    position: relative;
+
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 220px;
+
+    height: 100%;
+
+    background: #000;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 12px 25px rgba(0,0,0,.3);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+}
+
+.video-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===========================
+   Name Tag
+=========================== */
+
+.video-name{
+
+    position:absolute;
+
+    bottom:-5px;
+
+    left:48%;
+
+    transform:translateX(-50%);
+
+    background:rgba(15,23,42,.85);
+
+    color:white;
+
+    padding:8px 18px;
+
+    border-radius:25px;
+
+    font-size:19px;
+
+    font-weight:600;
+}
+
+
+/* ===========================
+   Peer ID
+=========================== */
+
+.peer-id {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* ===========================
+   Screen Sharing Status
+=========================== */
+
+.screen-sharing {
+    color: #22c55e;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
+/* ===========================
+   ....Host controls....
+=========================== */
+
+.host-controls{
+    margin:20px auto;
+    width:fit-content;
+    display:flex;
+    gap:15px;
+    align-items:center;
+    background:#1f2937;
+    padding:15px 25px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+.host-controls h3{
+    color:#fff;
+    margin-right:10px;
+}
+
+.host-controls button{
+    padding:10px 18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    background:#2563eb;
+    color:white;
+    transition:.3s;
+}
+
+.host-controls button:hover{
+    transform:translateY(-2px);
+    background:#1d4ed8;
+}
+/* =========================================================
+   RESPONSIVE VIDEO - TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .video-grid {
+        margin-bottom: 100px;
+        padding: 10px;
+    }
+
+    .video-card {
+        max-width: 700px;
+    }
+
+    .video-name {
+        font-size: 17px;
+        padding: 7px 15px;
+    }
+
+    .host-controls {
+        gap: 10px;
+        padding: 12px 18px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE VIDEO - MOBILE
+@/* =========================================================
+   MOBILE + TABLET HEADER 
+   Desktop view is NOT affected
+========================================================= */
+
+@media (max-width: 850px) {
+
+    /* =========================
+       MAIN MOBILE LAYOUT
+    ========================= */
+
+    .meeting-container {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        height: 100vh;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+
+    /* =========================
+       CENTER / VIDEO SECTION
+    ========================= */
+
+    .center-panel {
+        order: 1;
+
+        width: 100%;
+        height: auto;
+
+        min-height: 100vh;
+
+        padding: 10px;
+
+        overflow: visible;
+    }
+
+
+    /* =========================
+       MEETING HEADER
+    ========================= */
+
+    .meeting-header {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        justify-content: flex-start;
+
+        gap: 12px;
+
+        padding: 16px;
+
+        margin-bottom: 14px;
+
+        border-radius: 16px;
+    }
+
+
+    /* =========================
+       LEFT SIDE OF HEADER
+    ========================= */
+
+    .meeting-left {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+
+    /* =========================
+       MEETFLOW TITLE
+    ========================= */
+
+    .meeting-left h1 {
+
+        width: 100%;
+
+        margin: 0;
+
+        font-size: 32px;
+
+        line-height: 1.1;
+
+        text-align: left;
+    }
+
+
+    /* =========================
+       ROOM INFORMATION
+    ========================= */
+
+    .room-info {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+
+    .room-id {
+
+        font-size: 17px;
+
+        line-height: 1.3;
+
+        margin: 0;
+
+        white-space: nowrap;
+    }
+
+
+    /* =========================
+       COPY ROOM BUTTON
+    ========================= */
+
+    .copy-room-btn {
+
+        width: 230px;
+
+        padding: 10px 16px;
+
+        font-size: 15px;
+
+        text-align: center;
+    }
+
+
+    /* =========================
+       CONNECTION STATUS
+    ========================= */
+
+    .connection-status {
+
+        width: 165px;
+
+        align-self: flex-end;
+
+        margin: 0;
+
+        padding: 13px 12px;
+
+        border-radius: 15px;
+    }
+
+
+    .connection-status div {
+
+        font-size: 18px;
+    }
+
+
+    .connection-status small {
+
+        margin-top: 7px;
+
+        font-size: 15px;
+    }
+
+
+    /* =========================
+       PEER INFORMATION
+    ========================= */
+
+    .peer-info {
+
+        margin: 10px 0 14px;
+
+        font-size: 16px;
+
+        line-height: 1.4;
+
+        text-align: center;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =========================
+       PARTICIPANTS
+    ========================= */
+
+    .left-sidebar {
+
+        order: 2;
+
+        width: 100%;
+
+        height: auto;
+
+        overflow: visible;
+    }
+
+
+    /* =========================
+       CHAT + FILES
+    ========================= */
+
+    .right-sidebar {
+
+        order: 3;
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 500px;
+
+        overflow: visible;
+    }
+
+
+    /* =========================
+       VIDEO AREA
+    ========================= */
+
+    .center-panel > .video-container {
+
+        flex: none;
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 0;
+
+        overflow: visible;
+    }
+
+
+    /* =========================
+       HOST ACTIONS
+    ========================= */
+
+    .meeting-actions {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 10px;
+
+        padding-bottom: 100px;
+    }
+
+}
+
+/* =========================================================
+   SMALL MOBILE HEADER
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .center-panel {
+        padding: 8px;
+    }
+
+    .meeting-header {
+
+        padding: 14px;
+
+        gap: 10px;
+
+        margin-bottom: 12px;
+    }
+
+    .meeting-left h1 {
+
+        font-size: 28px;
+    }
+
+    .room-id {
+
+        font-size: 15px;
+    }
+
+    .copy-room-btn {
+
+        width: 210px;
+
+        padding: 9px 14px;
+
+        font-size: 14px;
+    }
+
+    .connection-status {
+
+        width: 150px;
+
+        padding: 11px 10px;
+    }
+
+    .connection-status div {
+
+        font-size: 17px;
+    }
+
+    .connection-status small {
+
+        font-size: 14px;
+
+        margin-top: 6px;
+    }
+
+    .peer-info {
+
+        font-size: 14px;
+
+        margin: 8px 0 12px;
+    }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .video-container {
+        min-height: 48vh;
+    }
+
+    .video-grid {
+        padding: 6px;
+        margin-bottom: 70px;
+    }
+
+    .video-card {
+        border-radius: 10px;
+    }
+
+    .video-name {
+
+    bottom: 4px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 9px;
+
+    line-height: 1.2;
+
+    padding: 3px 6px;
+
+    border-radius: 6px;
+
+    white-space: nowrap;
+
+    max-width: 85%;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+    .host-controls {
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    .host-controls button {
+        flex: 1;
+        min-width: 100px;
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+}
+
+/* ===========================
+   VIDEO PAGINATION
+=========================== */
+
+.video-pagination {
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 6px 8px;
+
+    background: rgba(15, 23, 42, 0.96);
+
+    border-radius: 12px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+
+    z-index: 30;
+}
+
+.page-btn {
+
+    width: 44px;
+
+    height: 40px;
+
+    border: none;
+
+    background: #1e293b;
+
+    color: white;
+
+    border-radius: 9px;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: .25s;
+}
+
+.page-btn:hover:not(:disabled) {
+
+    background: #2563eb;
+
+    transform: translateY(-2px);
+}
+
+.page-btn:disabled {
+
+    opacity: .35;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+.page-info {
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    min-width: 90px;
+
+    text-align: center;
+}
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .video-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+
+        gap: 7px;
+
+        padding: 6px;
+    }
+
+    .video-card {
+
+        min-height: 100px;
+
+        aspect-ratio: 16 / 9;
+
+        border-radius: 11px;
+    }
+
+   .video-name {
+
+    bottom: 5px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 3px 7px;
+
+    font-size: 10px;
+
+    line-height: 1.2;
+
+    border-radius: 7px;
+
+    white-space: nowrap;
+
+    max-width: 85%;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+    .peer-id {
+
+        font-size: 13px;
+
+        margin: 6px 8px;
+
+        line-height: 1.35;
+    }
+
+    .video-pagination {
+
+        gap: 6px;
+
+        padding: 5px 0 8px;
+    }
+
+    .page-btn {
+
+        width: 36px;
+
+        height: 34px;
+
+        font-size: 18px;
+    }
+
+    .page-info {
+
+        min-width: 65px;
+
+        font-size: 12px;
+    }
+
+}
+
+/* =========================================================
+   TABLET ONLY
+   601px - 850px
+========================================================= */
+
+@media (min-width: 601px) and (max-width: 850px) {
+
+    .video-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+
+        padding: 10px;
+    }
+
+    .video-card {
+
+        min-height: 0;
+
+        aspect-ratio: 16 / 9;
+
+        border-radius: 14px;
+    }
+
+   .video-name {
+
+    bottom: 6px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 11px;
+
+    line-height: 1.2;
+
+    padding: 4px 9px;
+
+    border-radius: 8px;
+
+    white-space: nowrap;
+
+    max-width: 80%;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+    .peer-id {
+
+        font-size: 16px;
+
+        margin-bottom: 8px;
+    }
+
+    .video-pagination {
+
+        position: static;
+
+        padding: 7px 0 10px;
+
+        gap: 8px;
+    }
+
+    .page-btn {
+
+        width: 42px;
+
+        height: 38px;
+
+        font-size: 20px;
+    }
+
+    .page-info {
+
+        min-width: 80px;
+
+        font-size: 14px;
+    }
+
+}
