@@ -49,6 +49,7 @@
 
 .participant-card{
 
+    position:relative;
     display:flex;
     align-items:center;
     gap:15px;
@@ -115,21 +116,43 @@
 
 .participant-info{
 
+    position:relative;
+
     flex:1;
 
-}
+    min-width:0;
 
-.participant-info h3{
-
-    margin:0;
-
-    font-size:18px;
-
-    display:flex;
-    align-items:center;
-    gap:10px;
+    padding-top:18px;
 
 }
+
+.participant-info h3 {
+    margin: 0;
+
+    font-size: 16px;
+    color: white;
+
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+.participant-name {
+    display: block;
+
+    width: 100%;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
 
 .participant-info p{
 
@@ -191,7 +214,12 @@
 
 }
 
-.host-badge{
+.host-badge {
+
+    position:absolute;
+
+    top:-18px;
+    right:0.5;
 
     font-size:12px;
 
@@ -204,6 +232,12 @@
     border-radius:30px;
 
     font-weight:600;
+
+    white-space:nowrap;
+
+    z-index:10;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.25);
 
 }
 
@@ -335,4 +369,56 @@
 
 .participants-list::-webkit-scrollbar-thumb:hover {
     background: #64748b;
+}
+
+/* ===========================
+   TABLET HOST BADGE
+=========================== */
+
+@media (min-width:601px) and (max-width:1024px){
+
+    .participant-info{
+        padding-top:16px;
+    }
+
+    .host-badge{
+        top:-2px;
+        right:0;
+
+        font-size:10px;
+
+        padding:3px 8px;
+    }
+
+    .participant-info h3{
+        font-size:16px;
+    }
+
+}
+
+/* ===========================
+   MOBILE HOST BADGE
+=========================== */
+
+@media (max-width:600px){
+
+    .participant-info{
+        padding-top:15px;
+    }
+
+    .host-badge{
+        top:-2px;
+        right:0;
+
+        font-size:9px;
+
+        padding:3px 7px;
+
+        border-radius:8px;
+    }
+
+    .participant-info h3{
+        font-size:14px;
+    }
+
 }

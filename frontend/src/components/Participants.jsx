@@ -52,35 +52,32 @@ function Participants({ participants, isHost }) {
           }`}
         >
 
-          <div className="participant-avatar">
+        <div className="participant-avatar">
 
-            {getInitials(currentUser?.name)}
+          {getInitials(currentUser?.name)}
 
-          </div>
+        </div>
 
-          <div className="participant-info">
+        <div className="participant-info">
 
-            <h3>
+        {isHost && (
+          <span className="host-badge">
+              👑 Host
+          </span>
+        )}
 
-              {currentUser?.name}
+        <h3>
+          <span className="participant-name">
+           {currentUser?.name}
+          </span>
+        </h3>
 
-              {isHost && (
-                <span className="host-badge">
-                  👑 Host
-                </span>
-              )}
+        <p>
+          <span className="online-dot"></span>
+          Online
+        </p>
 
-            </h3>
-
-            <p>
-
-              <span className="online-dot"></span>
-
-              Online
-
-            </p>
-
-          </div>
+        </div>
 
         </div>
 
@@ -108,32 +105,28 @@ function Participants({ participants, isHost }) {
 
             <div className="participant-info">
 
-              <h3>
+          {participant.isHost && (
+            <span className="host-badge">
+              👑 Host
+            </span>
+          )}
 
-                {participant.name ||
-                  `Participant ${index + 1}`}
+          <h3>
+            <span className="participant-name">
+              {participant.name || `Participant ${index + 1}`}
+            </span>
+          </h3>
 
-                {participant.isHost && (
-                  <span className="host-badge">
-                    👑 Host
-                  </span>
-                )}
+          <p>
+          <span className="online-dot"></span>
+           Online
+          </p>
 
-              </h3>
+        </div>
 
-              <p>
+        </div>
 
-                <span className="online-dot"></span>
-
-                Online
-
-              </p>
-
-            </div>
-
-          </div>
-
-        ))}
+      ))}
 
 
         {/* =====================================
